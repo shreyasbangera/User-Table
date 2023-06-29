@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Table from "./components/Table";
-import UserDetails from "./UserDetails";
+import Table from "./pages/Table";
+import UserDetails from "./pages/UserDetails";
 
 function App() {
   return (

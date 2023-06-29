@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "./utils/appSlice";
+import { fetchUsers } from "../utils/appSlice";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
