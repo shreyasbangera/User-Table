@@ -29,7 +29,7 @@ const dispatch = useDispatch()
       </div>
       <div className="w-1/5 p-3">
         <Link
-          to={`${user.id}`}>
+          to={`/users/${user.id}`}>
           <button className="px-2 py-1 bg-blue-500 hover:bg-red-700 text-white rounded mr-1"
         >
           Open

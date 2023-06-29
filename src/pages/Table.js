@@ -11,7 +11,7 @@ const Table = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [sortColumn, setSortColumn] = useState(null);
-  const [sortDirection, setSortDirection] = useState();
+  const [sortDirection, setSortDirection] = useState(null);
 
   useEffect(() => {
     fetchUsersdata();
@@ -24,9 +24,14 @@ const Table = () => {
 
   const handleSort = (column) => {
     if (sortColumn === column) {
-      setSortDirection((prevDirection) =>
-        prevDirection === "asc" ? "desc" : "asc"
-      );
+      if (sortDirection === "asc") {
+        setSortDirection("desc");
+      } else if (sortDirection === "desc") {
+        setSortColumn(null);
+        setSortDirection(null);
+      } else {
+        setSortDirection("asc");
+      }
     } else {
       setSortColumn(column);
       setSortDirection("asc");
@@ -58,7 +63,7 @@ const Table = () => {
           className="px-2 py-1 border border-gray-300 rounded"
         >
           {[...Array(users.length)].map((_, index) => (
-            <option value={index + 1}>{index + 1}</option>
+            <option key={index} value={index + 1}>{index + 1}</option>
           ))}
         </select>
       </div>
