@@ -8,23 +8,23 @@ const Tablerow = ({ user }) => {
 const dispatch = useDispatch()
   return (
     <div className="flex border-b border-gray-300 last:border-none">
-      <div className="w-1/5 border-r border-gray-300 p-3 truncate">
+      <div className="w-1/5 border-r border-gray-300 p-3 break-all">
         {user.name}
       </div>
-      <div className="w-1/5 border-r border-gray-300 p-3 truncate">
+      <div className="w-1/5 border-r border-gray-300 p-3 brea-all">
         {user.username}
       </div>
-      <div className="w-1/5 border-r border-gray-300 p-3 truncate">
+      <div className="w-1/5 border-r border-gray-300 p-3 break-all">
         {user.email}
       </div>
-      <div className="w-1/5 border-r border-gray-300 p-3 truncate">{`${user.address.street},${user.address.suite},${user.address.city},${user.address.zipcode}`}</div>
-      <div className="w-1/5 border-r border-gray-300 p-3 truncate">
+      <div className="w-1/5 border-r border-gray-300 p-3 break-all">{`${user.address.street},${user.address.suite},${user.address.city},${user.address.zipcode}`}</div>
+      <div className="w-1/5 border-r border-gray-300 p-3 break-all">
         {user.phone}
       </div>
-      <div className="w-1/5 border-r border-gray-300 p-3 truncate">
+      <div className="w-1/5 border-r border-gray-300 p-3 break-all">
         {user.website}
       </div>
-      <div className="w-1/5 border-r border-gray-300 p-3 truncate">
+      <div className="w-1/5 border-r border-gray-300 p-3 break-all">
         {user.company.name}
       </div>
       <div className="w-1/5 p-3">

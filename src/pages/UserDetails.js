@@ -8,14 +8,14 @@ import { fetchUser } from "../utils/appSlice";
 const UserDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch()
-  const userDetails = useSelector(store=>store.app.user)
+  const userDetails = useSelector(store=>store.app.user[id])
 
   useEffect(() => {
     fetchUserDetails();
   }, []);
 
   const fetchUserDetails = async () => {
-    if(!userDetails||userDetails.id!=id){
+    if(!userDetails){
       console.log("g");
       const res = await axios.get(
         `https://jsonplaceholder.typicode.com/users/${id}`

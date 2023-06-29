@@ -4,7 +4,7 @@ const appSlice = createSlice({
   name: "app",
   initialState: {
     users: [],
-    user: null,
+    user: {},
   },
   reducers: {
     fetchUsers: (state, action) => {
@@ -14,7 +14,9 @@ const appSlice = createSlice({
         state.users = state.users.filter(user=>user.id!==action.payload)
     },
     fetchUser:(state, action)=>{
-      state.user = action.payload
+      let userObj = state.user;
+      userObj[action.payload.id] = action.payload;
+      state.user = userObj;
     }
   },
 });
