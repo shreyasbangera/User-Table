@@ -7,21 +7,19 @@ import { fetchUser } from "../utils/appSlice";
 
 const UserDetails = () => {
   const { id } = useParams();
-  const dispatch = useDispatch()
-  const userDetails = useSelector(store=>store.app.user[id])
+  const dispatch = useDispatch();
+  const userDetails = useSelector((store) => store.app.user[id]);
 
   useEffect(() => {
     fetchUserDetails();
   }, []);
 
   const fetchUserDetails = async () => {
-    if(!userDetails){
-      console.log("g");
+    if (!userDetails) {
       const res = await axios.get(
         `https://jsonplaceholder.typicode.com/users/${id}`
       );
-      dispatch(fetchUser(res.data))
-      console.log({id, data:res.data})
+      dispatch(fetchUser(res.data));
     }
   };
 
@@ -54,8 +52,8 @@ const UserDetails = () => {
         <div className="mb-4">
           <strong>Website:</strong> {website}
         </div>
-        <div className="mb-4">
-          <strong>Company:</strong> {company.name}
+        <div className="mb-4 break-all">
+          <strong>Company:</strong> {`${company.name}, ${company.bs}`}
         </div>
       </div>
     </div>
